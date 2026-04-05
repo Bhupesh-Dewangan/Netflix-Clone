@@ -9,8 +9,8 @@ function ReasonsToJoin() {
         <section className="w-[85%] mx-auto">
             <h1 className="mb-5 text-left text-2xl font-bold tracking-tight text-white md:text-[1.65rem]">More reasons to join</h1>
 
-            <div class="grid grid-cols-4 gap-4 h-72 mb-10">
-                <div class="w-full h-auto rounded-2xl p-6 text-white relative
+            <div className="grid grid-cols-4 gap-4 h-72 mb-10">
+                <div className="w-full h-auto rounded-2xl p-6 text-white relative
             bg-linear-to-br 
             from-[#1f2a4a] via-[#2b1e3f] to-[#4a0d1a]
             shadow-[0_10px_40px_rgba(74,13,26,0.6)]">
@@ -19,7 +19,7 @@ function ReasonsToJoin() {
                     <img src={TV} alt="tv" className="absolute bottom-6 right-6" />
                 </div>
 
-                <div class="w-full h-auto rounded-2xl p-6 text-white relative
+                <div className="w-full h-auto rounded-2xl p-6 text-white relative
             bg-linear-to-br 
             from-[#1f2a4a] via-[#2b1e3f] to-[#4a0d1a]
             shadow-[0_10px_40px_rgba(74,13,26,0.6)]">
@@ -28,7 +28,7 @@ function ReasonsToJoin() {
                     <img src={Download} alt="tv" className="absolute bottom-6 right-6" />
                 </div>
 
-                <div class="w-full h-auto rounded-2xl p-6 text-white relative
+                <div className="w-full h-auto rounded-2xl p-6 text-white relative
             bg-linear-to-br 
             from-[#1f2a4a] via-[#2b1e3f] to-[#4a0d1a]
             shadow-[0_10px_40px_rgba(74,13,26,0.6)]">
@@ -37,7 +37,7 @@ function ReasonsToJoin() {
                     <img src={Scope} alt="tv" className="absolute bottom-6 right-6" />
                 </div>
 
-                <div class="w-full h-auto rounded-2xl p-6 text-white relative
+                <div className="w-full h-auto rounded-2xl p-6 text-white relative
             bg-linear-to-br 
             from-[#1f2a4a] via-[#2b1e3f] to-[#4a0d1a]
             shadow-[0_10px_40px_rgba(74,13,26,0.6)]">

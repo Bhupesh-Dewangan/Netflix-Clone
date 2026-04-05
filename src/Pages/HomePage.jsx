@@ -3,6 +3,8 @@ import Navbar from '../Components/Navbar'
 import HeroText from '../Components/HeroText'
 import TrendingSection from '../Components/TrendingSection'
 import ReasonsToJoin from '../Components/ReasonsToJoin'
+import FAQSection from '../Components/FAQSection'
+import FooterSection from '../Components/FooterSection'
 
 function HomePage() {
   return (
@@ -18,6 +20,8 @@ function HomePage() {
         <HeroText />
         <TrendingSection />
         <ReasonsToJoin />
+        <FAQSection />
+        <FooterSection/>
       </div>
     </div>
   )
