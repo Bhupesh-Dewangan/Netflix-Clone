@@ -2,7 +2,7 @@ import React from 'react'
 
 function HeroText() {
     return (
-        <div className="text-white flex flex-col items-center justify-center gap-5 w-[40%] m-auto pt-40 ">
+        <div className="text-white flex flex-col items-center justify-center gap-5 w-[40%] mx-auto pt-40 mb-26 ">
             <h1 className="text-6xl font-bold text-center my-3">Unlimited movies, shows, and more</h1>
             <p className="text-xl font-bold">Starts at ₹149. Cancel at any time.</p>
             <p className="text-lg">Ready to watch? Enter your email to create or restart your membership.</p>
