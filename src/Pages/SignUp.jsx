@@ -34,6 +34,14 @@ function SignUp() {
             </form>
           </div>
 
+          <div>
+            <p className="text-md text-gray-200 text-center mb-2 italic">Or</p>
+            <Link to="/dashboard">
+              <p className="text-lg text-gray-200 text-center cursor-pointer hover:underline">Continue with a new account</p>
+            </Link>
+
+          </div>
+
           <div className="w-full">
             <div
               className="flex items-center mt-10 text-md text-gray-200 cursor-pointer w-max"
@@ -42,9 +50,8 @@ function SignUp() {
               <span>Get Help</span>
 
               <svg
-                className={`ml-2 transform transition-transform duration-300 ${
-                  isOpen ? "rotate-180" : "rotate-0"
-                }`}
+                className={`ml-2 transform transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"
+                  }`}
                 width="20"
                 height="12"
                 viewBox="0 0 200 120"
@@ -61,9 +68,8 @@ function SignUp() {
             </div>
 
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                isOpen ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
-              }`}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
+                }`}
             ></div>
 
             {isOpen && (
