@@ -1,5 +1,6 @@
 import Netflix_Logo from "../assets/Netflix_Logo.png";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +8,9 @@ function SignUp() {
   return (
     <div className=" h-screen w-full bg-linear-to-b from-[#300000]  to-[#050000]">
       <nav className="border-b border-gray-900 flex item-start justify-start pl-[10%] py-1">
-        <img src={Netflix_Logo} alt="Netflix Logo" className="h-20 w-auto" />
+        <Link to="/">
+          <img src={Netflix_Logo} alt="Netflix Logo" className="h-20 w-auto" />
+        </Link>
       </nav>
 
       <div className="flex items-start justify-center h-auto">

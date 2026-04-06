@@ -1,6 +1,7 @@
 import React from "react";
 import translateIcon from "../assets/translate-icon.svg";
 import footerLinks from "../Data/Links";
+import { Link } from "react-router-dom";
 
 function FooterSection() {
   return (
@@ -12,11 +13,13 @@ function FooterSection() {
         <input
           type="email"
           placeholder="Email address"
-          className="bg-transparent border border-gray-500  text-white rounded-md px-4 py-3 w-[80%]"
+          className="bg-transparent border border-gray-500  text-white rounded-md px-4  w-[80%]"
         />
-        <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-3 rounded-md w-[40%]">
-          Get Started <span className="text-2xl pl-5"> &gt; </span>
-        </button>
+        <Link to="/signup">
+          <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-3 rounded-md w-full">
+            Get Started <span className="text-2xl pl-5"> &gt; </span>
+          </button>
+        </Link>
       </div>
 
       <footer className="bg-black text-gray-400 px-[10%] py-10 text-sm">

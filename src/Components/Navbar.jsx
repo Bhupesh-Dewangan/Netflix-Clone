@@ -1,12 +1,15 @@
 import React from "react";
 import Netflix_Logo from "../assets/Netflix_Logo.png";
 import translateIcon from "../assets/translate-icon.svg";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div className="flex items-center justify-between py-1 px-30">
       <div className="left">
-        <img src={Netflix_Logo} alt="Netflix Logo" className="h-20 w-auto" />
+        <Link to="/">
+          <img src={Netflix_Logo} alt="Netflix Logo" className="h-20 w-auto" />
+        </Link>
       </div>
 
       <div className="right flex items-center justify-center gap-4">
@@ -39,9 +42,11 @@ function Navbar() {
           </svg>
         </div>
 
-        <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-1.5 rounded-md transition-colors w-25">
-          Sign In
-        </button>
+        <Link to="/signup">
+          <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-1.5 rounded-md transition-colors w-25">
+            Sign In
+          </button>
+        </Link>
       </div>
     </div>
   );
