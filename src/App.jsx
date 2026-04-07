@@ -6,7 +6,7 @@ import Dashboard from "./Pages/Dashboard";
 
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen bg-black">
+    <div className="flex items-start justify-center h-screen bg-black">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUp />} />

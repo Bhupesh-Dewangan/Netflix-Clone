@@ -1,8 +1,11 @@
 import React from 'react'
+import MainNavbar from '../Components/MainNavbar'
 
 function Dashboard() {
     return (
-        <p className='text-white text-4xl'>This is a dashboard</p>
+        <>
+            <MainNavbar />
+        </>
     )
 }
 
