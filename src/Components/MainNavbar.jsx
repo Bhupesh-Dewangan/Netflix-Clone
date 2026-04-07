@@ -42,7 +42,7 @@ function MainNavbar() {
                 <CiSearch className='text-white w-6 h-6 text-bold hover:scale-110 transition-transform duration-200' />
                 <CiBellOn className='text-white w-6 h-6 text-bold hover:scale-110 transition-transform duration-200' />
 
-                <Link to="/signup">
+                <Link to="/login">
                     <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-1.5 rounded-md transition-colors w-25">
                         Sign In
                     </button>

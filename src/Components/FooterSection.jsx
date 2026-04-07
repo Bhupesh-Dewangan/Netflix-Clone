@@ -14,7 +14,7 @@ function FooterSection() {
           placeholder="Email address"
           className="bg-transparent border border-gray-500  text-white rounded-md px-4  w-[80%]"
         />
-        <Link to="/signup">
+        <Link to="/login">
           <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-3 rounded-md w-full">
             Get Started <span className="text-2xl pl-5"> &gt; </span>
           </button>

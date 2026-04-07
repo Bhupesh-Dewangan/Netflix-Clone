@@ -42,7 +42,7 @@ function Navbar() {
           </svg>
         </div>
 
-        <Link to="/signup">
+        <Link to="/login">
           <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-1.5 rounded-md transition-colors w-25">
             Sign In
           </button>
