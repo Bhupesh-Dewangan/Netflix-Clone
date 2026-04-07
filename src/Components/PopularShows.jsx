@@ -1,9 +1,9 @@
 import React from 'react'
 import ShowCards from '../Data/Cards.js'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function PopularShows({ title, category }) {
-
     const [movies, setMovies] = useState([]);
     const options = {
         method: 'GET',
@@ -25,10 +25,10 @@ function PopularShows({ title, category }) {
             {/* Hiding scrollbar but allowing horizontal scroll */}
             <div className='flex gap-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'>
                 {movies.map((card, index) => (
-                    <div key={index} className='flex flex-col shrink-0 w-[2000px] sm:w-[250px] md:w-[300px]'>
+                    <Link to={`/player/${card.id}`} key={index} className='flex flex-col shrink-0 w-[2000px] sm:w-[250px] md:w-[300px]'>
                         <img src={`https://image.tmdb.org/t/p/w500${card.backdrop_path}`} alt={card.name} className="w-full h-auto aspect-video rounded-md object-cover cursor-pointer transition-transform duration-300 hover:scale-105 hover:z-10" />
                         <p className='text-white text-sm mt-2 font-bold'>{card.original_title}</p>
-                    </div>
+                    </Link>
                 ))
                 }
             </div>

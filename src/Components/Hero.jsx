@@ -14,7 +14,7 @@ function Hero() {
                 <img src={HeroTitle} alt="Hero Title" className='w-full mb-3' />
                 <p className='text-gray-300 text-md italic w-full mb-5'>Discovering his ties to a secret ancient order, a young man living in modern Istanbul embarks on a quest to save the city from an immortal enemy.</p>
                 <div className='flex gap-3'>
-                    <Link to="/signup">
+                    <Link to="/player/16022004">
                         <button className='text-white font-bold px-8 py-2 rounded-md bg-red-600 hover:bg-red-700 hover:text-black transition-colors duration-200 flex items-center gap-2'>  <FaPlay className='' /> Play</button>
                     </Link>
                     <button className='text-white font-bold px-8 py-2 rounded-md bg-gray-500 hover:bg-gray-600 hover:text-black transition-colors duration-200'>More Info</button>
