@@ -23,8 +23,8 @@ function Login() {
           <div className="flex flex-col gap-2 w-full  mb-6">
             <form action="" className="flex flex-col gap-4">
               <input
-                type="email/number"
-                placeholder="Email or Mobile Number"
+                type="email"
+                placeholder="Email"
                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
               />
               <input
@@ -75,7 +75,7 @@ function Login() {
             {isOpen && (
               <div className="space-y-2 flex flex-col">
                 <a href="#" className="text-sm underline">
-                  Format email or mobile number?
+                  Format email or password?
                 </a>
                 <a href="#" className="text-sm underline">
                   Learn more about Sign-in

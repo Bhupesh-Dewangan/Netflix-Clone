@@ -31,12 +31,6 @@ function SignUp() {
                                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
                             />
                             <input
-                                type="numbe r"
-                                placeholder="Mobile Number"
-                                className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
-                            />
-
-                            <input
                                 type="password"
                                 placeholder="Password"
                                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"

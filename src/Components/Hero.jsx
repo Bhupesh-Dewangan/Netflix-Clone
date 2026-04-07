@@ -22,7 +22,7 @@ function Hero() {
             </div>
 
             <div className="absolute bottom-4 left-0 w-full z-20">
-                <PopularShows />
+                <PopularShows key={0} title={"Popular Shows"} category={"popular"} />
             </div>
 
         </div >
