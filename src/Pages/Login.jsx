@@ -3,9 +3,18 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import footerLinks from "../Data/Links";
 import translateIcon from "../assets/translate-icon.svg";
+import { login } from "../firebase.js";
 
 function Login() {
   const [isOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    login(email, password);
+  }
 
   return (
     <div className=" h-screen w-full bg-linear-to-b from-[#300000]  to-[#050000]">
@@ -25,21 +34,25 @@ function Login() {
               <input
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
               />
               <input
                 type="password"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
               />
-              <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-3 rounded-md w-full mt-2">
-                Continue
+              <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-3 rounded-md w-full mt-2" onClick={handleLogin}>
+                Sign In
               </button>
             </form>
           </div>
 
           <div>
-            <p className="text-md text-gray-200 text-center mb-2 italic">New to Netflix? <Link to="/signup" className="text-white hover:underline">Sign up now</Link></p>
+            <p className="text-md text-gray-200 text-center mb-2 italic">New to Netflix? <Link to="/signup" className="text-white hover:underline">Sign Up now</Link></p>
           </div>
 
           <div className="w-full">
@@ -78,7 +91,7 @@ function Login() {
                   Format email or password?
                 </a>
                 <a href="#" className="text-sm underline">
-                  Learn more about Sign-in
+                  Learn more about Sign In
                 </a>
               </div>
             )}

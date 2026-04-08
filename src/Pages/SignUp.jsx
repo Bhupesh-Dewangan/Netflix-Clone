@@ -2,9 +2,23 @@ import React from 'react'
 import Netflix_Logo from '../assets/Netflix_Logo.png'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { signup } from '../firebase.js'
 
 function SignUp() {
     const [isOpen, setIsOpen] = useState(false);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    const handleSignUp = (e) => {
+        e.preventDefault();
+        if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+        signup(name, email, password);
+    }
     return (
         <div className=" h-screen w-full bg-linear-to-b from-[#300000]  to-[#050000]">
             <nav className="border-b border-gray-900 flex item-start justify-start pl-[10%] py-1">
@@ -23,24 +37,32 @@ function SignUp() {
                             <input
                                 type="text"
                                 placeholder="Full Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
                             />
                             <input
                                 type="email"
                                 placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
                             />
                             <input
                                 type="password"
                                 placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
                             />
                             <input
                                 type="password"
                                 placeholder="Confirm Password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
                                 className="bg-transparent border border-gray-500  text-white rounded-md  py-3 px-4 w-full"
                             />
-                            <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-3 rounded-md w-full mt-2">
+                            <button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-3 rounded-md w-full mt-2" onClick={handleSignUp}  >
                                 Create Account
                             </button>
                         </form>
@@ -83,7 +105,7 @@ function SignUp() {
                         {isOpen && (
                             <div className="space-y-2 flex flex-col">
                                 <a href="#" className="text-sm underline">
-                                    Learn more about Sign-up
+                                    Learn more about Sign Up
                                 </a>
                             </div>
                         )}
