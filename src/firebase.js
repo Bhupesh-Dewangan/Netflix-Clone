@@ -37,7 +37,7 @@ const signup = async (name, email, password) => {
         toast.success("User created successfully");
     } catch (error) {
         console.log(error);
-        toast.error(error.message);
+        toast.error(error.message.split("/")[1].split("-").join(" "));
     }
 }
 
@@ -49,7 +49,7 @@ const login = async (email, password) => {
         toast.success("User logged in successfully");
     } catch (error) {
         console.log(error);
-        toast.error(error.message);
+        toast.error(error.message.split("/")[1].split("-").join(" "));
     }
 }
 
@@ -60,7 +60,7 @@ const logout = async () => {
         toast.success("User logged out successfully");
     } catch (error) {
         console.log(error);
-        toast.error(error.message);
+        toast.error(error.message.split("/")[1].split("-").join(" "));
     }
 }
 
