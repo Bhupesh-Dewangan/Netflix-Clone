@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
@@ -15,6 +15,7 @@ import Loading from "./Components/Loading";
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
 
   // Show loading animation completely when the website opens
@@ -26,21 +27,29 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Handle Firebase auth state changes only after the loading screen is done
+  // Handle Firebase auth state changes only after the loading screen is done.
+  // Keep public routes accessible, and guard private routes.
   useEffect(() => {
-    if (isLoading) return; // Wait until loading animation is complete
+    if (isLoading) return;
+
+    const publicRoutes = ["/", "/login", "/signup"];
 
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        navigate("/dashboard");
-      }
-      else {
-        navigate("/");
+        // Logged-in users should not remain on auth/landing pages.
+        if (publicRoutes.includes(location.pathname)) {
+          navigate("/dashboard", { replace: true });
+        }
+      } else {
+        // Guests can access only public routes.
+        if (!publicRoutes.includes(location.pathname)) {
+          navigate("/login", { replace: true });
+        }
       }
     });
 
     return () => unsubscribe();
-  }, [isLoading, navigate]);
+  }, [isLoading, navigate, location.pathname]);
 
   if (isLoading) {
     return <Loading />;
