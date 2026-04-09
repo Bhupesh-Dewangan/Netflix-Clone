@@ -8,20 +8,21 @@ import FooterSection from '../Components/FooterSection'
 
 function HomePage() {
   return (
-    <div className="min-h-screen h-full w-full bg-[url('./assets/Background.jpg')] bg-cover bg-center relative">
-      <div className="absolute inset-0 bg-black/50 bg-linear-to-t from-black via-transparent to-black/80" />
-      {/* Bottom vignette only: eases posters into the trending black without washing the whole hero */}
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-[min(48vh,28rem)] bg-linear-to-b from-transparent via-black/35 to-black"
-        aria-hidden
-      />
-      <div className="relative z-10 flex flex-col h-full">
-        <Navbar />
-        <HeroText />
+    <div className="min-h-screen w-full bg-black">
+      {/* Background image only for hero block */}
+      <section className="relative h-full w-full bg-[url('./assets/Background.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80" />
+        <div className="relative z-10 flex h-full flex-col">
+          <Navbar />
+          <HeroText />
+        </div>
+      </section>
+
+      <div className="relative z-10 flex flex-col">
         <TrendingSection />
         <ReasonsToJoin />
         <FAQSection />
-        <FooterSection/>
+        <FooterSection />
       </div>
     </div>
   )

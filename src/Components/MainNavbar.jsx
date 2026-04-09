@@ -8,67 +8,88 @@ import { logout } from '../firebase'
 
 function MainNavbar() {
     const [showDropdown, setShowDropdown] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
+
+    const navItems = ["Home", "TV Shows", "Movies", "New & Popular", "My List"];
 
     return (
-        <div className="flex justify-between items-center bg-black w-full px-10 border-b border-gray-800 h-14">
-            <div className="left">
-                <Link to="/">
-                    <img src={Netflix_Logo} alt="Netflix Logo" className="h-10 w-auto" />
-                </Link>
-            </div>
+        <div className="relative w-full border-b border-gray-800 bg-black px-4 py-3 sm:px-6 lg:px-10">
+            <div className="flex h-auto w-full flex-wrap items-center justify-between gap-3 lg:h-14 lg:flex-nowrap lg:gap-4">
+                <div className="left flex items-center gap-3">
+                    <button
+                        type="button"
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-700 text-white lg:hidden"
+                        aria-label="Toggle menu"
+                        onClick={() => setShowMenu((prev) => !prev)}
+                    >
+                        <span className="text-xl leading-none">{showMenu ? "x" : "≡"}</span>
+                    </button>
+                    <Link to="/">
+                        <img src={Netflix_Logo} alt="Netflix Logo" className="h-8 w-auto sm:h-10" />
+                    </Link>
+                </div>
 
-            <div className="mid">
-                <ul className="flex justify-around gap-8 text-white text-sm">
-                    <li className=' transition-colors duration-200 hover:bg-red-600 px-3 py-1 rounded-full'>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li className=' transition-colors duration-200 hover:bg-red-600 px-3 py-1 rounded-full'>
-                        <Link to="/">TV Shows</Link>
-                    </li>
-                    <li className=' transition-colors duration-200 hover:bg-red-600 px-3 py-1 rounded-full'>
-                        <Link to="/">Movies</Link>
-                    </li>
-                    <li className=' transition-colors duration-200 hover:bg-red-600 px-3 py-1 rounded-full'>
-                        <Link to="/">New & Popular</Link>
-                    </li>
-                    <li className=' transition-colors duration-200 hover:bg-red-600 px-3 py-1 rounded-full'>
-                        <Link to="/">My List</Link>
-                    </li>
-                </ul>
-            </div>
+                <div className="mid hidden lg:block">
+                    <ul className="flex justify-around gap-5 text-sm text-white xl:gap-8">
+                        {navItems.map((item) => (
+                            <li key={item} className='rounded-full px-3 py-1 transition-colors duration-200 hover:bg-red-600'>
+                                <Link to="/">{item}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
-            <div className='SearchBar flex items-center gap-2'>
-                <CiSearch className='text-white w-6 h-6 text-bold hover:scale-110 transition-tr ansform duration-200' />
-                <input type="text" placeholder='Search' className='bg-black text-white text-sm border border-gray-800 rounded-full px-2 py-1 w-80' />
-            </div>
+                <div className='SearchBar order-3 flex w-full items-center gap-2 sm:order-none sm:w-auto'>
+                    <CiSearch className='h-6 w-6 text-bold text-white transition-tr ansform duration-200 hover:scale-110' />
+                    <input type="text" placeholder='Search' className='w-full rounded-full border border-gray-800 bg-black px-3 py-1 text-sm text-white sm:w-52 md:w-72 lg:w-60 xl:w-80' />
+                </div>
 
-            <div className="right flex gap-8 items-center">
-                <CiBellOn className='text-white w-6 h-6 text-bold hover:scale-110 transition-transform duration-200' />
+                <div className="right flex items-center gap-4 sm:gap-6 lg:gap-8">
+                    <CiBellOn className='h-6 w-6 text-bold text-white transition-transform duration-200 hover:scale-110' />
 
-                <div className="relative">
-                    <div className="cursor-pointer" onClick={() => setShowDropdown(!showDropdown)}>
-                        <FaUser className='text-white w-6 h-6 text-bold hover:scale-110 transition-transform duration-200' />
-                    </div>
-                    {showDropdown && (
-                        <div className="absolute right-0 mt-3 w-32 bg-black border border-gray-800 rounded-md shadow-lg z-50">
-                            <ul className="py-2 text-white text-sm">
-                                <li className="px-4 py-2 hover:bg-gray-800 cursor-pointer transition-colors duration-200">
-                                    <Link to='/profile' className="block w-full h-full">Profile</Link>
-                                </li>
-                                <li
-                                    className="px-4 py-2 hover:bg-gray-800 cursor-pointer transition-colors duration-200 text-left"
-                                    onClick={() => {
-                                        logout();
-                                        setShowDropdown(false);
-                                    }}
-                                >
-                                    Sign Out
-                                </li>
-                            </ul>
+                    <div className="relative">
+                        <div className="cursor-pointer" onClick={() => setShowDropdown(!showDropdown)}>
+                            <FaUser className='h-6 w-6 text-bold text-white transition-transform duration-200 hover:scale-110' />
                         </div>
-                    )}
+                        {showDropdown && (
+                            <div className="absolute right-0 z-50 mt-3 w-32 rounded-md border border-gray-800 bg-black shadow-lg">
+                                <ul className="py-2 text-sm text-white">
+                                    <li className="cursor-pointer px-4 py-2 transition-colors duration-200 hover:bg-gray-800">
+                                        <Link to='/profile' className="block h-full w-full">Profile</Link>
+                                    </li>
+                                    <li
+                                        className="cursor-pointer px-4 py-2 text-left transition-colors duration-200 hover:bg-gray-800"
+                                        onClick={() => {
+                                            logout();
+                                            setShowDropdown(false);
+                                        }}
+                                    >
+                                        Sign Out
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
+
+            {showMenu && (
+                <div className="mt-3 rounded-md border border-gray-800 bg-zinc-900/95 p-2 lg:hidden">
+                    <ul className="flex flex-col text-sm text-white">
+                        {navItems.map((item) => (
+                            <li key={item}>
+                                <Link
+                                    to="/"
+                                    className="block rounded-md px-3 py-2 transition-colors hover:bg-zinc-800"
+                                    onClick={() => setShowMenu(false)}
+                                >
+                                    {item}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     )
 }

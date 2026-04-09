@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 
 function FooterSection() {
   return (
-    <section className="w-[85%] mx-auto mb-10">
-      <p className="text-lg text-center text-white mt-6 mb-6">
+    <section className="mx-auto mb-10 w-[92%] sm:w-[88%] lg:w-[85%]">
+      <p className="mb-6 mt-6 text-center text-base text-white sm:text-lg">
         Ready to watch? Enter your email to create or restart your membership.
       </p>
-      <div className="flex gap-2 w-[70%] mx-auto mb-6">
+      <div className="mx-auto mb-6 flex w-full max-w-3xl flex-col gap-2 sm:flex-row">
         <input
           type="email"
           placeholder="Email address"
-          className="bg-transparent border border-gray-500  text-white rounded-md px-4  w-[80%]"
+          className="w-full rounded-md border border-gray-500 bg-transparent px-4 py-3 text-white sm:w-[70%]"
         />
-        <Link to="/login">
-          <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-3 rounded-md w-full">
+        <Link to="/login" className="w-full sm:w-[30%]">
+          <button className="w-full rounded-md bg-red-600 px-4 py-3 font-bold text-white hover:bg-red-700">
             Get Started <span className="text-2xl pl-5"> &gt; </span>
           </button>
         </Link>

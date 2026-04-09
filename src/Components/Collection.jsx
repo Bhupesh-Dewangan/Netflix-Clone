@@ -3,12 +3,14 @@ import PopularShows from './PopularShows'
 
 function Collection() {
     const titles = [
+        "Popular Shows",
         "Now Playing",
         "Top Rated",
         "Upcoming"
     ]
 
     const categories = [
+        "popular",
         "now_playing",
         "top_rated",
         "upcoming"

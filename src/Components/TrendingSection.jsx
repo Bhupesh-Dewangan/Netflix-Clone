@@ -65,7 +65,7 @@ function TrendingSection() {
                     className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-[radial-gradient(ellipse_140%_100%_at_50%_-5%,rgba(49,46,129,0.28)_0%,rgba(30,27,75,0.14)_42%,transparent_68%)]"
                     aria-hidden
                 />
-                <div className="relative px-6 pb-14 pt-2 md:px-14 lg:px-24">
+                <div className="relative px-4 pb-12 pt-2 sm:px-6 md:px-14 lg:px-24">
                     <h2 className="mb-5 text-left text-2xl font-bold tracking-tight text-white md:text-[1.65rem]">
                         Trending Now
                     </h2>
@@ -73,7 +73,7 @@ function TrendingSection() {
                     <div className="relative">
                         <div
                             ref={scrollerRef}
-                            className="trending-scroll flex gap-1 overflow-x-auto overflow-y-visible scroll-smooth pb-2 pl-1 pr-16 pt-2 [-webkit-overflow-scrolling:touch]"
+                            className="trending-scroll flex gap-1 overflow-x-auto overflow-y-visible scroll-smooth pb-2 pl-1 pr-10 pt-2 sm:pr-16 [-webkit-overflow-scrolling:touch]"
                         >
                             {TRENDING_POSTERS.map((item) => (
                                 <div
@@ -91,7 +91,7 @@ function TrendingSection() {
                                         <img
                                             src={item.poster}
                                             alt={item.title}
-                                            className="aspect-2/3 w-full rounded-[10px] object-cover shadow-[0_12px_40px_-12px_rgba(0,0,0,0.85)] ring-1 ring-white/10 transition duration-300 group-hover:scale-[1.03] group-hover:ring-white/25"
+                                            className="aspect-[2/3] w-full rounded-[10px] object-cover shadow-[0_12px_40px_-12px_rgba(0,0,0,0.85)] ring-1 ring-white/10 transition duration-300 group-hover:scale-[1.03] group-hover:ring-white/25"
                                             loading="lazy"
                                             draggable={false}
                                         />
@@ -103,7 +103,7 @@ function TrendingSection() {
                         <button
                             type="button"
                             onClick={scrollNext}
-                            className="absolute right-0 top-1/2 z-20 flex h-30 w-8 -translate-y-1/2 items-center justify-center rounded-md bg-zinc-900/85 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-[2px] transition hover:bg-zinc-800/95"
+                            className="absolute right-0 top-1/2 z-20 hidden h-24 w-8 -translate-y-1/2 items-center justify-center rounded-md bg-zinc-900/85 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-[2px] transition hover:bg-zinc-800/95 sm:flex"
                             aria-label="Scroll trending row"
                         >
                             <span className="text-lg font-light leading-none opacity-95">&gt;</span>

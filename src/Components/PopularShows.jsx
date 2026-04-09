@@ -18,14 +18,14 @@ function PopularShows({ title, category }) {
             .then(res => res.json())
             .then(res => setMovies(res.results))
             .catch(err => console.error(err));
-    }, []);
+    }, [category]);
     return (
-        <div className="px-10 w-full">
-            <h2 className="text-2xl font-bold text-white mb-2">{title ? title : "Popular Shows"}</h2>
+        <div className="w-full px-4 sm:px-6 lg:px-10">
+            <h2 className="mb-2 text-xl font-bold text-white sm:text-2xl">{title ? title : "Popular Shows"}</h2>
             {/* Hiding scrollbar but allowing horizontal scroll */}
             <div className='flex gap-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'>
                 {movies.map((card, index) => (
-                    <Link to={`/player/${card.id}`} key={index} className='flex flex-col shrink-0 w-[2000px] sm:w-[250px] md:w-[300px]'>
+                    <Link to={`/player/${card.id}`} key={index} className='flex w-[75vw] shrink-0 flex-col sm:w-[280px] md:w-[320px]'>
                         <img src={`https://image.tmdb.org/t/p/w500${card.backdrop_path}`} alt={card.name} className="w-full h-auto aspect-video rounded-md object-cover cursor-pointer transition-transform duration-300 hover:scale-105 hover:z-10" />
                         <p className='text-white text-sm mt-2 font-bold'>{card.original_title}</p>
                     </Link>

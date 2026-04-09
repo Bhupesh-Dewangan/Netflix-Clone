@@ -56,7 +56,7 @@ function App() {
   }
 
   return (
-    <div className="flex items-start justify-center h-screen bg-black">
+    <div className="min-h-screen w-full bg-black">
       <ToastContainer theme='dark' />
       <Routes>
         <Route path="/" element={<HomePage />} />

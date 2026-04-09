@@ -38,9 +38,9 @@ function Player() {
     }, [id, navigate]);
 
     return (
-        <div className='w-full h-screen flex items-center justify-center'>
-            <img src={BackArrowIcon} alt="Back Arrow Icon" className='absolute top-5 left-5 w-10 h-10 cursor-pointer' onClick={() => navigate(-1)} />
-            <iframe width="90%" height="90%" src={`https://www.youtube.com/embed/${player.key}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen   ></iframe>
+        <div className='relative flex h-screen w-full items-center justify-center bg-black px-3 sm:px-6'>
+            <img src={BackArrowIcon} alt="Back Arrow Icon" className='absolute left-3 top-4 h-8 w-8 cursor-pointer sm:left-5 sm:top-5 sm:h-10 sm:w-10' onClick={() => navigate(-1)} />
+            <iframe className='h-[34vh] w-full rounded-md sm:h-[55vh] md:h-[70vh] lg:h-[82vh] lg:w-[92%]' src={`https://www.youtube.com/embed/${player.key}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import translateIcon from '../assets/translate-icon.svg'
 
 function Footer() {
     return (
-        <footer className="bg-[#141414] text-gray-200 px-[10%] py-10 text-sm">
+        <footer className="bg-[#141414] px-4 py-10 text-sm text-gray-200 sm:px-8 lg:px-[10%]">
             {/* Top Text */}
             <p className="mb-6">
                 Questions? Call{" "}
@@ -27,7 +27,7 @@ function Footer() {
             </div>
 
             {/* Language Selector */}
-            <div className="relative border border-gray-500 bg-black/50 text-white rounded-md hover:border-white transition-colors duration-200 px-1.5 py-1.4 mb-6 w-[15%]">
+            <div className="relative mb-6 w-40 rounded-md border border-gray-500 bg-black/50 px-1.5 py-1 text-white transition-colors duration-200 hover:border-white sm:w-44">
                 <img
                     src={translateIcon}
                     alt="Translate"
