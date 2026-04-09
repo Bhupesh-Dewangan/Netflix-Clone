@@ -39,17 +39,17 @@ function MainNavbar() {
                     </ul>
                 </div>
 
-                <div className='SearchBar order-3 flex w-full items-center gap-2 sm:order-none sm:w-auto'>
-                    <CiSearch className='h-6 w-6 text-bold text-white transition-tr ansform duration-200 hover:scale-110' />
+                <div className='SearchBar order-3 flex w-full items-center gap-2 sm:order-0 sm:w-auto'>
+                    <CiSearch className='h-6 w-6 font-bold text-white transition-transform duration-200 hover:scale-110' />
                     <input type="text" placeholder='Search' className='w-full rounded-full border border-gray-800 bg-black px-3 py-1 text-sm text-white sm:w-52 md:w-72 lg:w-60 xl:w-80' />
                 </div>
 
                 <div className="right flex items-center gap-4 sm:gap-6 lg:gap-8">
-                    <CiBellOn className='h-6 w-6 text-bold text-white transition-transform duration-200 hover:scale-110' />
+                    <CiBellOn className='h-6 w-6 font-bold text-white transition-transform duration-200 hover:scale-110' />
 
                     <div className="relative">
                         <div className="cursor-pointer" onClick={() => setShowDropdown(!showDropdown)}>
-                            <FaUser className='h-6 w-6 text-bold text-white transition-transform duration-200 hover:scale-110' />
+                            <FaUser className='h-6 w-6 font-bold text-white transition-transform duration-200 hover:scale-110' />
                         </div>
                         {showDropdown && (
                             <div className="absolute right-0 z-50 mt-3 w-32 rounded-md border border-gray-800 bg-black shadow-lg">
