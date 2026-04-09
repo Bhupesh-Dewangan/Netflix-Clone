@@ -4,6 +4,15 @@ A high-performance, responsive Netflix clone built with **React**, **Vite**, and
 
 ---
 
+## Project Preview
+<img width="1907" height="863" alt="image" src="https://github.com/user-attachments/assets/2afaa996-77ef-4272-b6bc-fa62017dda5e" />
+<br>
+<img width="1902" height="867" alt="image" src="https://github.com/user-attachments/assets/1505fc87-d778-4bde-a2b8-25143ebdd71a" />
+<br>
+<img width="1898" height="866" alt="image" src="https://github.com/user-attachments/assets/096fd43c-efc5-48ae-a706-b87fd773f8ea" />
+<br>
+<img width="1902" height="865" alt="image" src="https://github.com/user-attachments/assets/ad73f16b-3ad1-4745-a020-04a0b66cb707" />
+
 ## 🚀 Features
 
 - **🔐 Secure Authentication**: User sign-up, login, and logout powered by Firebase Auth.
