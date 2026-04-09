@@ -9,8 +9,8 @@ import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Loading from "./Components/Loading";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3200); // 3.2 seconds delay to ensure the animation plays fully (adjustable)
+    }, 2000); // 2 seconds delay to ensure the animation plays fully (adjustable)
 
     return () => clearTimeout(timer);
   }, []);
@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div className="min-h-screen w-full bg-black">
-      <ToastContainer theme='dark' />
+      <ToastContainer theme="dark" />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUp />} />
